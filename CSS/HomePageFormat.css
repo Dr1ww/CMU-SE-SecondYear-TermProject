@@ -229,3 +229,20 @@ ooter {
     border-top: 1px solid #555;
   }
 /*-------------------------- Footer -----------------------------*/
+/* BuyNow 按钮效果 */
+#buyNowButton {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+#buyNowButton:hover {
+    background-color: #297fb8; /* 鼠标悬停时的背景颜色 */
+    color: #ffffff;
+}
+/*-------------------------- 购买按键效果 -----------------------------*/
