@@ -6,13 +6,6 @@ body {
     margin: 0; /* 去除 body 默认的 margin，以确保宽度为100% */
 }
 
-/*header主体*/
-header {
-    background-color: #fff; /* 设置导航栏背景色为白色 */
-    color: #333;
-    text-align: center;
-    padding: 20px;
-}
 
 /*导航栏主体*/
 nav {
@@ -39,6 +32,7 @@ nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* 为特定的导航项添加样式 */
@@ -192,3 +186,46 @@ footer {
 }
 
 /*-------------------------- 商品展示 -----------------------------*/
+/* Footer */
+ooter {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+  }
+/*-------------------------- Footer -----------------------------*/
