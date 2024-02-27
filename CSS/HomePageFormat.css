@@ -141,3 +141,34 @@ footer {
 }
 
 /*-------------------------- 商品展示 -----------------------------*/
+
+
+/*------------ Responsive mobile view-------------------*/
+@media only screen and (max-width: 768px) {
+    .product-section {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    .product-image img {
+      margin-left: 0; /* Remove left margin */
+      margin-bottom: 20px; /* Add bottom margin for separation */
+    }
+  
+    .product-info {
+      padding-left: 0; /* Remove left padding */
+      margin-bottom: 20px; /* Add bottom margin for separation */
+    }
+  
+    .product-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    .product-info p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+  
