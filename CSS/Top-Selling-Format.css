@@ -31,12 +31,12 @@
 }
 
 .product-info h3 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 .product-info p {
-    font-size: 16px;
+    font-size: 1.3em;
     color: #555;
 }
 
@@ -49,23 +49,49 @@
 
 .size-buttons button {
     margin-bottom: 10px; /* 控制按钮之间的间隙 */
+    width: 120px; /* 设置按钮宽度 */
+    height: 50px;
+    border-radius: 8px; /* 设置按钮圆角半径 */
+    font-weight: bolder;
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+/*加入过渡效果*/
+.size-buttons button.active {
+    background-color: #3498db;
+    color: #fff;
 }
 
 /* 3. 价格和加入购物车水平排列 */
 .product-price {
-    display: flex;
-    align-items: center;
+    margin-top: 30px;
+}
+
+.product-price p{
+    font-weight: bolder;
+    font-size: 2.0em;
+    color: #000;
 }
 
 .product-price button {
     margin-left: 10px;
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.product-price button:hover {
+    background-color: #3498db; /* 鼠标悬停时的背景颜色 */
+    color: #fff; /* 鼠标悬停时的文本颜色*/
 }
 
-/* 4. Policy图片调整 */
+.product-price button:active {
+    background-color: #2980b9; /* 鼠标点击时的背景颜色*/
+    color: #fff; /* 鼠标点击时的文本颜色*/
+}
+
+/* 4. Policy */
 .policy-info{
-    background-color: #fff;
-    margin-top: 20px;
+    margin-top: 30px;
 }
-.policy-info img {
-    max-width: 100%; /* 确保图片不超出父容器 */
-}
+

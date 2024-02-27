@@ -91,20 +91,36 @@
                         </div>
                     </div>
                     
-                    
-                
                     <!-- 3. 价格和加入购物车 -->
                     <div class="product-price">
                       <h3>Price</h3>
-                      <p>￥99.99</p>
+                      <p>1099￥</p>
                       <button>Add to Cart</button>
                     </div>
                 
                     <!-- 4. 政策说明 -->
                     <div class="policy-info">
                       <h3>Policy</h3>
-                      <img src="../Image For Tools/Policy.png" alt="Policy Image">
-                    </div>
+                  
+                      <!-- Policy 1 -->
+                      <div class="policy-item">
+                          <!-- Icon for Policy 1 -->
+                          <img src="../Icon/package_car_2x.png" alt="Policy 1 Icon">
+                  
+                          <!-- Description for Policy 1 -->
+                          <p>Free Delivery: Returns are also free delivery.</p>
+                      </div>
+                  
+                      <!-- Policy 2 -->
+                      <div class="policy-item">
+                          <!-- Icon for Policy 2 -->
+                          <img src="../Icon/Chield_check_fill@2x.png" alt="Policy 2 Icon">
+                  
+                          <!-- Description for Policy 2 -->
+                          <p>Protecting Privacy: Full Privacy Shipping.</p>
+                      </div>
+                  </div>
+
                   </div>
               </section>
         </main>
@@ -153,5 +169,22 @@
           window.location.href = '../HTML/Top-Selling.html';
         });
       </script>
+      <script>
+        // JavaScript 代码处理按钮点击事件，实现样式切换
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.size-buttons button');
+            // 遍历所有按钮，添加点击事件监听器
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的 'active' 类
+                    buttons.forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    // 为当前点击的按钮添加 'active' 类
+                    button.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
