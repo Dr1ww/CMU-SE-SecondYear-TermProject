@@ -53,6 +53,7 @@ nav .sign-in-button {
 }
 
 
+
 /*-----------------------------导航栏结束-------------------------------------*/
 /* Footer */
 Footer {
@@ -96,7 +97,34 @@ Footer {
     padding-top: 10px;
     border-top: 1px solid #555;
   }
+
+/*------------Footer Responsive mobile view-------------------*/
+  /* 在移动视图下进行样式调整 */
+  @media only screen and (max-width: 768px) {
+  /* 调整 footer 的样式 */
+  footer {
+    padding: 10px 0; /* 调整 padding */
+  }
+
+  .footer-container {
+    flex-direction: column; /* 切换为垂直布局 */
+    align-items: center; /* 在垂直方向居中对齐 */
+  }
+
+  .footer-section {
+    flex: auto; /* 自动扩展高度 */
+    margin: 10px 0; /* 调整上下间距 */
+  }
+
+  .footer-bottom {
+    margin-top: 10px; /* 调整顶部间距 */
+    padding-top: 5px; /* 调整顶部 padding */
+    border-top: 1px solid #555; /* 移除顶部边框 */
+  }
+  }
+
 /*-------------------------- Footer -----------------------------*/
+
 /* BuyNow 按钮效果 */
 .buyNowButton {
     background-color: #ffffff;
@@ -114,3 +142,67 @@ Footer {
     color: #ffffff;
 }
 /*-------------------------- 购买按键效果 -----------------------------*/
+
+
+/*------------ Responsive mobile view-------------------*/
+@media only screen and (max-width: 768px) {
+  nav .cart-button,
+  nav .sign-in-button {
+    margin-top: 10px;
+  }
+
+  .purchase-section {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between; /* 在父容器内部水平居中对齐 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  .product-info {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    flex: 1; /* 拉伸 h1 元素以填充剩余空间 */
+  }
+
+  .product-image {
+    margin-top: 20px;
+    width: 100%; /* Adjust width */
+  }
+
+  .product-image img {
+    width: 80%; /* Adjust image width */
+    margin: 0 auto; /* Center image horizontally */
+    display: block;
+  }
+
+  #buyNowButton {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .new-arrivals-section h1 {
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .product-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .product {
+    width: 45%;
+  }
+
+  footer {
+    padding: 10px;
+  }
+}
