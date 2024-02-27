@@ -6,6 +6,10 @@ body {
     margin: 0; /* 去除 body 默认的 margin，以确保宽度为100% */
 }
 
+main {
+  background-color: #f4f4f4;/* 设置网页背景 */
+  min-height: 100vh; /* 设置主体最小高度，确保渐变色背景充满整个页面 */
+}
 
 /*导航栏主体*/
 nav {
