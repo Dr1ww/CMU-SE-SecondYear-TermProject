@@ -98,7 +98,7 @@ Footer {
   }
 /*-------------------------- Footer -----------------------------*/
 /* BuyNow 按钮效果 */
-#buyNowButton {
+.buyNowButton {
     background-color: #ffffff;
     color: #000000;
     font-size: 18px;
@@ -109,7 +109,7 @@ Footer {
     transition: background-color 0.3s ease; /* 添加过渡效果 */
 }
 
-#buyNowButton:hover {
+.buyNowButton:hover {
     background-color: #297fb8; /* 鼠标悬停时的背景颜色 */
     color: #ffffff;
 }

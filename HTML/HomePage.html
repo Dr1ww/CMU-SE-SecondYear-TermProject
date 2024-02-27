@@ -63,7 +63,7 @@
             <h1><strong>Purchase top-selling <br> product now.</strong> </h1>
             <p>Experience ultimate comfort and style with our innovative lightweight running shoes. Ideal for all your athletic pursuits and daily adventures.</p>
         <!-- 使用按钮，并通过 JavaScript 处理点击事件实现跳转 -->
-        <button id="buyNowButton">Buy Now</button>        
+        <button class="buyNowButton" id="buyNowButton">Buy Now</button>        
     </div>
         <!-- 右侧商品图片 -->
         <div class="product-image">
@@ -79,25 +79,25 @@
         <div class="product">
             <img src="../Image Source 1/NIKE Cloth 抠图版.png" alt="Product 1">
             <h3>Hoodie</h3>
-            <button id="buyNowButton">Buy Now</button>
+            <button class="buyNowButton" id="buyNowButton1">Buy Now</button>
         </div>
         <!-- 商品 2 -->
         <div class="product">
             <img src="../Image Source 1/Cloth 1.png" alt="Product 2">
             <h3>Short</h3>
-            <button id="buyNowButton">Buy Now</button>
+            <button class="buyNowButton">Buy Now</button>
         </div>
         <!-- 商品 3 -->
         <div class="product">
             <img src="../Image Source 1/image 2.png" alt="Product 3">
             <h3>Sneaker</h3>
-            <button id="buyNowButton">Buy Now</button>
+            <button class="buyNowButton">Buy Now</button>
         </div>
         <!-- 商品 4 -->
         <div class="product">
             <img src="../Image Source 1/image 3.png" alt="Product 4">
             <h3>KIDS</h3>
-            <button id="buyNowButton">Buy Now</button>
+            <button class="buyNowButton">Buy Now</button>
         </div>
     </div>
 </section>
@@ -141,6 +141,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--跳转相应网页-->
     <script>
         // JavaScript 代码处理按钮点击事件，实现页面跳转
         document.getElementById('buyNowButton').addEventListener('click', function() {
@@ -148,5 +149,15 @@
           window.location.href = '../HTML/Top-Selling.html';
         });
       </script>
+
+          <script>
+        // JavaScript 代码处理按钮点击事件，实现页面跳转
+        document.getElementById('buyNowButton1').addEventListener('click', function() {
+          // 在此处设置购买页面的 URL
+          window.location.href = '../HTML/NewArrivalHoodie.html';
+        });
+      </script>
+      
+      <!------------------------------------------------------------>
 </body>
 </html>
