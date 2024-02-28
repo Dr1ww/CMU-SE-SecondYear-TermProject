@@ -41,6 +41,8 @@ hr {
 }
 
 
+/*------------ Responsive mobile view-------------------*/
+
 /* 在移动设备上调整 FAQ 页面样式 */
 @media (max-width: 768px) {
     .faq-main {
