@@ -132,3 +132,36 @@ h2 span{
 }
 
 
+/*------------ Responsive mobile view-------------------*/
+/* 在移动设备上应用的样式 */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column; /* 将主体内容布局改为垂直方向 */
+        align-items: center; /* 居中主体内容 */
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* 让左右部分占据整个宽度 */
+        margin-left: 0; /* 清除左侧边距 */
+    }
+
+    .separator {
+        display: none; /* 移除分隔线 */
+    }
+
+    /* 调整标签宽度 */
+    .left-section label, .right-section label {
+        width: auto;
+    }
+
+    /* 调整输入框样式 */
+    .left-section input[type="text"],
+    .left-section input[type="email"],
+    .left-section input[type="password"],
+    .right-section input[type="text"],
+    .right-section input[type="email"],
+    .right-section input[type="password"] {
+        width: 100%; /* 让输入框占据整个宽度 */
+        margin-left: 0; /* 清除左侧边距 */
+    }
+}
