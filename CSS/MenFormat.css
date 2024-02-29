@@ -1,0 +1,12 @@
+.navbar-bg-new {
+    background-color: #168eb0 !important; /* 这里设置新的导航栏的背景颜色 */
+
+}
+
+.navbar-bg-new .nav-link {
+    color: #ffffff !important; /* 设置新导航栏中的字体颜色为白色 */
+}
+
+.navbar-bg-new .nav-link:hover {
+    color: #ffcc00 !important; /* 设置悬停时的字体颜色为黄色 */
+}
