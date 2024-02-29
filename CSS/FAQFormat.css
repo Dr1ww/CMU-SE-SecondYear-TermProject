@@ -39,3 +39,39 @@ hr {
     margin-top: 10px; /* 调整分割线上方间距 */
     margin-bottom: 20px; /* 调整分割线下方间距 */
 }
+
+
+/*------------ Responsive mobile view-------------------*/
+
+/* 在移动设备上调整 FAQ 页面样式 */
+@media (max-width: 768px) {
+    .faq-main {
+        flex-direction: column; /* 在移动设备上将主体布局改为垂直方向 */
+    }
+
+    .faq-image {
+        order: -1; /* 在移动设备上将图片部分排在文字部分之前 */
+        padding: 0; /* 移除图片部分的内边距 */
+    }
+
+    .faq-image img {
+        max-width: 100%; /* 图片宽度最大为容器宽度的100% */
+        margin: 0 auto; /* 在移动设备上居中图片 */
+        display: block; /* 使图片在移动设备上居中 */
+    }
+
+    .faq-text {
+        padding: 20px; /* 重新设置文字部分的内边距 */
+        margin: 0; /* 移除文字部分的外边距 */
+    }
+
+    .faq-text h2 {
+        font-size: 28px; /* 调整标题字体大小 */
+    }
+
+    .faq-text p {
+        font-size: 16px; /* 调整段落字体大小 */
+        font-weight: normal; /* 重置字体粗细为正常 */
+    }
+}
+
