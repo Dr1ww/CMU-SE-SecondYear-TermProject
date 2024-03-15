@@ -39,12 +39,69 @@
                         <li class="nav-item">
                             <a class="nav-link" href="FAQ.html">FAQ</a>
                         </li>
-                        <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </li>
+                         <li class="nav-item" id="searchFormWrapper">
+                          <form id="searchForm" class="form-inline my-2 my-lg-0">
+                              <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                              <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+                          </form>
+                      </li>
+                      
+                      <script>
+                          // 获取搜索表单和其内部元素
+                          const searchForm = document.getElementById('searchForm');
+                          const searchInput = document.getElementById('searchInput');
+                          const searchButton = document.getElementById('searchButton');
+                      
+                          // 添加事件监听器来处理搜索操作
+                          searchButton.addEventListener('click', function() {
+                              // 获取搜索关键字
+                              const keyword = searchInput.value.trim().toLowerCase();
+                              
+                              // 执行搜索操作
+                              // 这里可以添加您的搜索逻辑，比如跳转到搜索结果页面、显示搜索结果等
+                              switch (keyword) {
+                                  case 'kids':
+                                      window.location.href = 'KidsHomePage.html';
+                                      break;
+                                  case 'men':
+                                      window.location.href = 'MenHomePage.html';
+                                      break;
+                                  case 'women':
+                                      window.location.href = 'WomenHomePage.html';
+                                      break;
+                                  default:
+                                      alert('No search results found for: ' + keyword);
+                              }
+                          });
+                      
+                          // 也可以在按下回车键时执行搜索操作
+                          searchInput.addEventListener('keyup', function(event) {
+                              // 获取搜索关键字
+                              const keyword = searchInput.value.trim().toLowerCase();
+                              
+                              // 如果按下的是回车键，则执行搜索操作
+                              if (event.key === 'Enter') {
+                                  // 阻止默认提交行为
+                                  event.preventDefault();
+                                  
+                                  // 执行搜索操作
+                                  // 这里可以添加您的搜索逻辑，比如跳转到搜索结果页面、显示搜索结果等
+                                  switch (keyword) {
+                                      case 'kids':
+                                          window.location.href = 'KidsHomePage.html';
+                                          break;
+                                      case 'men':
+                                          window.location.href = 'MenHomePage.html';
+                                          break;
+                                      case 'women':
+                                          window.location.href = 'WomenHomePage.html';
+                                          break;
+                                      default:
+                                          alert('No search results found for: ' + keyword);
+                                  }
+                              }
+                          });
+                      </script>
                         <li class="nav-item">
                              <a class="nav-link cart-button" href="Cart.html">Cart</a>
                         </li>
