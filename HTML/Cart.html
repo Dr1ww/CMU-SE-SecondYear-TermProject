@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 添加 Bootstrap 样式链接 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/HomePageFormat.css">
     <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/Cart.css">
 
     <title>Home Page</title>
 </head>
@@ -44,7 +44,7 @@
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link cart-button" href="Cart.html">Cart</a>
+                            <a class="nav-link cart-button" href="#">Cart</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link sign-in-button" href="SignInPage.html">Sign In</a>
@@ -55,82 +55,92 @@
         </nav>
         <!-- Bootstrap 导航栏结束 -->
 
-        <!-- 网页主体开始 -->
-        <main>
-            <!-- Purchase top-selling product 部分 -->
-    <section class="purchase-section">
-        <!-- 左侧商品介绍 -->
-        <div class="product-info">
-            <h1><strong>Purchase top-selling <br> product now.</strong> </h1>
-            <p>Experience ultimate comfort and style with our innovative lightweight running shoes. Ideal for all your athletic pursuits and daily adventures.</p>
-        <!-- 使用按钮，并通过 JavaScript 处理点击事件实现跳转 -->
-        <button class="buyNowButton" id="buyNowButton">Buy Now</button>        
-    </div>
-        <!-- 右侧商品图片 -->
-        <div class="product-image">
-            <img src="../Image Source 1/Product1.png" alt="Top-Selling Product">
+<!-- 网页主体开始 -->
+<main class="container">
+    <!-- 标题部分 -->
+    <h1>Shopping Cart</h1>
+    <h2>You have <span id="itemCount">0</span> item(s) in your cart</h2>
+    
+    <!-- 物品显示区域 -->
+    <div class="row">
+        <!-- 左侧物品框 -->
+        <div class="col-md-8">
+            <!-- 这里放置左侧物品框 -->
         </div>
-    </section>
 
-            <!-- 商品展示部分 -->
-<section class="new-arrivals-section">
-    <h1>New Arrivals</h1>
-    <div class="product-container">
-        <!-- 商品 1 -->
-        <div class="product">
-            <img src="../Image Source 1/NIKE Cloth 抠图版.png" alt="Product 1">
-            <h3>Hoodie</h3>
-            <button class="buyNowButton" id="buyNowButton1">Buy Now</button>
-        </div>
-        <!-- 商品 2 -->
-        <div class="product">
-            <img src="../Image Source 1/Cloth 1.png" alt="Product 2">
-            <h3>Short</h3>
-            <button class="buyNowButton" id="buyNowButton2">Buy Now</button>
-        </div>
-        <!-- 商品 3 -->
-        <div class="product">
-            <img src="../Image Source 1/image 2.png" alt="Product 3">
-            <h3>Sneaker</h3>
-            <button class="buyNowButton" id="buyNowButton3">Buy Now</button>
-        </div>
-        <!-- 商品 4 -->
-        <div class="product">
-            <img src="../Image Source 1/image 3.png" alt="Product 4">
-            <h3>KIDS</h3>
-            <button class="buyNowButton" id="buyNowButton4">Buy Now</button>
+        <!-- Payment Details框 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Payment Details</h5>
+
+                    <!-- Payment Type Logo -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="../Cart/Maestro.png" alt="Logo 1">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="../Cart/Mastercard.png" alt="Logo 2">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="../Cart/UnionPay.png" alt="Logo 3">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="../Cart/Visa.png" alt="Logo 4">
+                        </div>
+                    </div>
+
+                    <!-- Payment Type -->
+                    <div class="form-group">
+                        <label for="paymentType">Payment Type</label>
+                        <select class="form-control" id="paymentType">
+                            <option>Credit Card</option>
+                            <option>Debit Card</option>
+                            <option>PayPal</option>
+                        </select>
+                    </div>
+
+                    <!-- Card Number -->
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+
+                    <!-- Expiration Date -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expirationMonth">Expiration Date</label>
+                            <input type="text" class="form-control" id="expirationMonth" placeholder="MM">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="expirationYear"> </label>
+                            <input type="text" class="form-control" id="expirationYear" placeholder="YYYY">
+                        </div>
+                    </div>
+
+                    <!-- CVV -->
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+
+                    <!-- Subtotal -->
+                    <p>Subtotal: <span id="subtotal">￥0.00</span></p>
+
+                    <!-- Shipping -->
+                    <p>Shipping: <span id="shipping">￥0.00</span></p>
+
+                    <!-- Total -->
+                    <p>Total (Tax incl.): <span id="total">￥0.00</span></p>
+
+                    <!-- Pay按钮 -->
+                    <button type="button" class="btn btn-primary btn-block">Pay</button>
+                </div>
+            </div>
         </div>
     </div>
-    <!--轮播-->
-     <!-- 轮播部分 -->
-     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img class="d-block w-100" src="../imageCarousel/Carousel_1.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block w-100" src="../imageCarousel/Carousel_2.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block w-100" src="../imageCarousel/Carousel_3.jpg" alt="Third slide">
-          </div>
-          <div class="carousel-item">
-              <img class="d-block w-100" src="../imageCarousel/Carousel_4.jpg" alt="Fourth slide">
-          </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-      </a>
-  </div>
-</section>
-
-        </main>
-        <!-- 网页主体结束 -->
+</main>
+<!-- 网页主体结束 -->
 
         <!-- 底部开始 -->
         <footer>
@@ -214,9 +224,3 @@
       <!------------------------------------------------------------>
 </body>
 </html>
-      <!------------------------------------------------------------>
-      <!------------------------------------------------------------>
-      <!------------------------------------------------------------>
-      <!------------------------------------------------------------>
-            <!------------------------------------------------------------>
-
