@@ -141,6 +141,16 @@ footer {
 }
 
 /*-------------------------- 商品展示 -----------------------------*/
+/* 新增轮播样式 */
+#carouselExampleControls {
+    margin-top: 50px;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
 
 
 /*------------ Responsive mobile view-------------------*/
@@ -169,6 +179,17 @@ footer {
     .product-info p {
       font-size: 16px;
       margin-bottom: 20px;
+    }
+
+    /* 调整轮播容器大小以确保图片完整显示 */
+    #carouselExampleControls {
+        max-width: 100%;
+        margin-top: 20px; /* 调整上部间距 */
+    }
+  
+    .carousel-item img {
+        max-width: 100%;
+        height: auto; /* 让图片高度自适应 */
     }
   }
   
