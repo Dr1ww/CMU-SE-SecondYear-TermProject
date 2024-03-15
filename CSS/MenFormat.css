@@ -71,3 +71,11 @@ main {
     font-weight: bolder;
     color: #007bff;
 }
+
+
+@media (max-width: 576px) {
+    .product-details {
+      display: none; /* 在小屏幕下隐藏产品详情 */
+    }
+  }
+  
