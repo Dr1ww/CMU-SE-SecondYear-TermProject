@@ -47,7 +47,7 @@
                           const searchForm = document.getElementById('searchForm');
                           const searchInput = document.getElementById('searchInput');
                           const searchButton = document.getElementById('searchButton');
-                      
+                          
                           // 添加事件监听器来处理搜索操作
                           searchButton.addEventListener('click', function() {
                               // 获取搜索关键字
@@ -69,7 +69,7 @@
                                       alert('No search results found for: ' + keyword);
                               }
                           });
-                      
+                          
                           // 也可以在按下回车键时执行搜索操作
                           searchInput.addEventListener('keyup', function(event) {
                               // 获取搜索关键字
@@ -150,7 +150,7 @@
                     <div class="product-price">
                       <h3>Price</h3>
                       <p>599￥</p>
-                      <button>Add to Cart</button>
+                      <button id="addToCartButton">Add to Cart</button>
                     </div>
                 
                     <!-- 4. 政策说明 -->
@@ -219,9 +219,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '../HTML/Top-Selling.html';
+        document.getElementById('addToCartButton').addEventListener('click', function() {
+          // 获取商品信息
+          const productName = document.querySelector('.product-header h2').textContent.trim();
+          const selectedSize = document.querySelector('.size-buttons button.active').textContent.trim();
+          const price = document.querySelector('.product-price p').textContent.trim();
+          
+          // 构造要传递到购物车页面的参数字符串
+          const queryParams = `?productName=${encodeURIComponent(productName)}&selectedSize=${encodeURIComponent(selectedSize)}&price=${encodeURIComponent(price)}`;
+          
+          // 构造购物车页面的URL并跳转
+          const cartURL = 'Cart.html' + queryParams;
+          window.location.href = cartURL;
         });
       </script>
       <script>
