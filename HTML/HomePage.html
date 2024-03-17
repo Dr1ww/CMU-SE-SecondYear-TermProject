@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="../CSS/HomePageFormat.css">
     <link rel="stylesheet" href="../CSS/global.css">
 
+    <!-- Leaflet CSS 文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript 文件 -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <title>Home Page</title>
 </head>
 <body>
@@ -198,11 +204,15 @@
               </div>
               <div class="footer-section">
                 <!-- Company Info and Contact -->
+                <!-- 地图区域 -->
+                <div id="map" style="height: 200px;"></div>
                 <h3>About Us</h3>
                 <p>239 Huay Kaew Rd, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200</p>
-                <p>Email: bingwen_qian@cmu.ac.th</p>
+                <p><a href="mailto:bingwen_qian@cmu.ac.th">Email: bingwen_qian@cmu.ac.th</a></p>
+
                 <p>Phone: +66 168 168 1688</p>
               </div>
+
               <div class="footer-section">
                 <!-- Navigation Links -->
                 <h3>Quick Links</h3>
@@ -264,6 +274,22 @@
           // 在此处设置购买页面的 URL
           window.location.href = '../HTML/NewArrivalKIDS.html';
         });
+      </script>
+
+      <script>
+      // 创建地图并设置中心点坐标和缩放级别
+      var map = L.map('map').setView([18.7953, 98.9529], 15);
+
+      // 添加地图图层
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // 添加标记并设置清迈大学的位置
+      // 在地图上添加标记（清迈大学的位置）
+      L.marker([18.80046,98.95095]).addTo(map)
+            .bindPopup("<b>Chiang Mai University</b>").openPopup();
+            
       </script>
 
 
