@@ -150,6 +150,10 @@ app.get('/menproduct/:productId', (req, res) => {
     });
 });
 
+app.get('/FAQ', (req, res) => {
+    // 在这里发送您的FAQ页面
+    res.render('FAQ'); // 假设您的FAQ页面是使用ejs模板渲染的，这里假设模板文件名为FAQ.ejs
+});
 
 
 // 启动服务器

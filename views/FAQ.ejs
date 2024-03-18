@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 添加 Bootstrap 样式链接 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/FAQFormat.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+
+        <!-- Leaflet CSS 文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ 
+        <!-- Leaflet JavaScript 文件 -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <title>FAQ Page</title>
+</head>
+<body>
+
+<!--导航栏--> 
+<%- include('partials/navbar') %>
+
+        <!-- FAQ 网页主体开始 -->
+       <main class="faq-main">
+      <!-- 左侧图片部分 -->
+     <div class="faq-image">
+      <img src="../FAQ Image/Image 1.png" alt="FAQ Image">
+    </div>
+
+     <!-- 右侧文字部分 -->
+       <div class="faq-text">
+      <h2>Frequently Asked Questions</h2>
+      <hr>
+      <p>Q: What are the popular sport brands and products you carry?</p>
+      <p>A: We offer various renowned sport brands, including NIKE, ANTA, and more, 
+        covering a wide range of products such as sports shoes and activewear.</p>
+      <hr>
+      <p>Q: Can I modify or cancel my order after placing it?</p>
+      <p>A: Order modifications or cancellations are subject to availability. 
+        Contact our customer service as soon as possible for assistance.</p>
+      <hr>
+      <p>Q: What payment methods do you accept?</p>
+      <p>A: We accept a range of payment methods, including credit cards, debit cards, and online payment platforms. 
+        Visit our payment options page for more details.</p>
+      <hr>
+      <p>Q: How is the shipping cost calculated?</p>
+      <p>A: The shipping cost varies based on the delivery address and options. 
+        You can view specific charges on the checkout page.</p>
+      <hr>
+      <p>Q: How to contact us?</p>
+      <p>A: You can contact us through email, email account: bingwen_qian@cmu.ac.th.</p>
+      <hr>
+      </div>
+        </main>
+<!-- FAQ 网页主体结束 -->
+
+
+    <!-- 底部开始 -->
+    <%- include('partials/footer') %>
+
+    <!-- 底部结束 -->
+ 
+
+
+    <!-- 添加 Bootstrap JavaScript 依赖 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript 代码处理按钮点击事件，实现页面跳转
+        document.getElementById('buyNowButton').addEventListener('click', function() {
+          // 在此处设置购买页面的 URL
+          window.location.href = '../HTML/Top-Selling.html';
+        });
+      </script>
+
+<script>
+    // 创建地图并设置中心点坐标和缩放级别
+    var map = L.map('map').setView([18.7953, 98.9529], 15);
+
+    // 添加地图图层
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 添加标记并设置清迈大学的位置
+    // 在地图上添加标记（清迈大学的位置）
+    L.marker([18.80046,98.95095]).addTo(map)
+          .bindPopup("<b>Chiang Mai University</b>").openPopup();
+         
+</script>
+
+</body>
+</html>
