@@ -61,6 +61,7 @@ main {
     font-weight: bolder;
     margin-bottom: 5px;
     color: #000;
+    background-color:rgba(255, 204, 0, 0.5);
 }
 .product-box:hover .product-name {
     color: #168eb0; /* 鼠标悬停时变为蓝色 */

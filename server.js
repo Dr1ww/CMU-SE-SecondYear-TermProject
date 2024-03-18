@@ -60,6 +60,19 @@ app.get('/product', (req, res) => {
         res.render('product', { productData: results[0] });
     });
 });
+//获取men
+app.get('/MenHomePage', (req, res) => {
+    // 从数据库中获取menproduct数据
+    db.query('SELECT * FROM menproduct', (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        // 将menproduct数据传递给MenHomePage.ejs模板
+        res.render('MenHomePage', { menproduct: results });
+    });
+});
 
 
 // 定义计算购物车总价的函数
