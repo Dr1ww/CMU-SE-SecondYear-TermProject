@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 添加 Bootstrap 样式链接 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/MenFormat.css">
+ 
+    <!-- Leaflet CSS 文件 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ 
+    <!-- Leaflet JavaScript 文件 -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+ 
+    <title>WomenHomePage</title>
+</head>
+<body>
+ <!--导航栏-->
+    <%- include('partials/navbar') %>
+ 
+ 
+        <!-- 新的导航栏 -->
+        <%- include('partials/subNavBar') %>
+ 
+    <!-- 网页主体开始 -->
+    <main>
+        <!-- 根据menproduct数组长度，每三个产品为一组 -->
+        <% for (let i = 0; i < womenproduct.length; i += 3) { %>
+            <div class="product-container">
+                <!-- 第一列产品 -->
+                <% if (womenproduct[i]) { %>
+                    <a href="/womenproduct/<%= womenproduct[i].id %>" class="product-box">
+                        <img class="product-img" src="<%= womenproduct[i].image_path %>" alt="Product <%= i + 1 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= womenproduct[i].home_title %></div>
+                            <div class="product-price">￥<%= womenproduct[i].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+ 
+                <!-- 第二列产品 -->
+                <% if (womenproduct[i + 1]) { %>
+                    <a href="/womenproduct/<%= womenproduct[i + 1].id %>" class="product-box">
+                        <img class="product-img" src="<%= womenproduct[i + 1].image_path %>" alt="Product <%= i + 2 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= womenproduct[i + 1].home_title %></div>
+                            <div class="product-price">￥<%= womenproduct[i + 1].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+ 
+                <!-- 第三列产品 -->
+                <% if (womenproduct[i + 2]) { %>
+                    <a href="/womenproduct/<%= womenproduct[i + 2].id %>" class="product-box">
+                        <img class="product-img" src="<%= womenproduct[i + 2].image_path %>" alt="Product <%= i + 3 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= womenproduct[i + 2].home_title %></div>
+                            <div class="product-price">￥<%= womenproduct[i + 2].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+            </div>
+        <% } %>
+ 
+    </main>
+    <!-- 网页主体结束 -->
+ 
+ <!--footer-->
+    <%- include('partials/footer') %>
+ 
+ 
+    <!-- 添加 Bootstrap JavaScript 依赖 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--跳转相应网页-->
+    <script>
+        // 创建地图并设置中心点坐标和缩放级别
+        var map = L.map('map').setView([18.7953, 98.9529], 15);
+ 
+        // 添加地图图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+ 
+        // 添加标记并设置清迈大学的位置
+        // 在地图上添加标记（清迈大学的位置）
+        L.marker([18.80046,98.95095]).addTo(map)
+              .bindPopup("<b>Chiang Mai University</b>").openPopup();
+             
+    </script>
+</body>
+</html>

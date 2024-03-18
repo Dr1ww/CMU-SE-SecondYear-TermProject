@@ -73,6 +73,20 @@ app.get('/MenHomePage', (req, res) => {
         res.render('MenHomePage', { menproduct: results });
     });
 });
+//获取women
+app.get('/WomenHomePage', (req, res) => {
+    // 从数据库中获取menproduct数据
+    db.query('SELECT * FROM womenproduct', (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        // 将menproduct数据传递给MenHomePage.ejs模板
+        res.render('WomenHomePage', { womenproduct: results });
+    });
+});
+
 
 
 // 定义计算购物车总价的函数
@@ -149,6 +163,19 @@ app.get('/menproduct/:productId', (req, res) => {
         res.render('product', { productData: results[0] });
     });
 });
+app.get('/womenproduct/:productId', (req, res) => {
+    const productId = req.params.productId;
+    const sql = 'SELECT * FROM womenproduct WHERE id = ?';
+    db.query(sql, [productId], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('product', { productData: results[0] });
+    });
+});
+
 
 app.get('/FAQ', (req, res) => {
     // 在这里发送您的FAQ页面
@@ -157,83 +184,89 @@ app.get('/FAQ', (req, res) => {
 
 // 在您的 Express 应用中添加一个特定路由用于处理 特定 页面的请求
 app.get('/specialDiscount', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['SD'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/featuredClothing', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['FC'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/Sneakers', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['Sn'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/RunningShoes', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['RS'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/BasketBallShoes', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['BS'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/Fitness', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['FT'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
+
 app.get('/Accessories', (req, res) => {
-    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['Ac'], (err, results) => {
         if (err) {
             console.error('Error querying database:', err);
             res.status(500).send('Internal Server Error');
             return;
         }
-        res.render('SubNavPage', { menproduct: results });
+        res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
-
+//Women
 
 
 
