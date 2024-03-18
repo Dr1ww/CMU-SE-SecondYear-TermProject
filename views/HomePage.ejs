@@ -237,45 +237,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!--跳转相应网页-->
     <script>
-        // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '/product?productId=h000';
-        });
-      </script>
+        // 获取所有buyNowButton按钮元素
+        const buyNowButtons = document.querySelectorAll('.buyNowButton');
  
-          <script>
-        // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton1').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '/product?productId=h001';
+       // 遍历所有按钮，为每个按钮添加点击事件监听器
+        buyNowButtons.forEach(function(button, index) {
+       // 为每个按钮添加点击事件监听器
+        button.addEventListener('click', function() {
+       // 构造产品ID
+        const productId = 'h00' + index;
+       // 设置购买页面的 URL，并传递产品ID作为查询参数
+        window.location.href = '/product?productId=' + productId;
         });
-      </script>
- 
-                <script>
-        // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton2').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '/product?productId=h002';
-        });
-      </script>
- 
-                      <script>
-        // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton3').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '/product?productId=h003';
-        });
-      </script>
- 
-                            <script>
-        // JavaScript 代码处理按钮点击事件，实现页面跳转
-        document.getElementById('buyNowButton4').addEventListener('click', function() {
-          // 在此处设置购买页面的 URL
-          window.location.href = '/product?productId=h004';
-        });
-      </script>
- 
+    });
+    </script> 
       <script>
       // 创建地图并设置中心点坐标和缩放级别
       var map = L.map('map').setView([18.7953, 98.9529], 15);

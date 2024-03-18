@@ -94,7 +94,7 @@ app.post('/add-to-cart', (req, res) => {
     // 从请求体中获取商品信息
     const { title, size, price } = req.body;
 
-    // 将商品信息插入到数据库的购物车表单中
+    // 将商品信息插入到数据库的购物车表中
     const sql = 'INSERT INTO cart (title, size, price) VALUES (?, ?, ?)';
     db.query(sql, [title, size, price], (err, result) => {
         if (err) {
@@ -107,6 +107,23 @@ app.post('/add-to-cart', (req, res) => {
         res.redirect('/cart');
     });
 });
+
+// 删除购物车物品的路由处理
+app.post('/remove-from-cart', (req, res) => {
+    const itemId = req.body.itemId;
+    const sql = 'DELETE FROM cart WHERE itemId = ?';
+    db.query(sql, [itemId], (err, result) => {
+        if (err) {
+            console.error('Error removing item from cart:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        console.log('Item removed from cart successfully!');
+        // 发送成功响应
+        res.send('Item removed from cart successfully!');
+    });
+});
+
 
 // 启动服务器
 const PORT = process.env.PORT || 3000;
