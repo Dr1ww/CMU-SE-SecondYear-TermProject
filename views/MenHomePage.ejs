@@ -14,7 +14,6 @@
     <!-- Leaflet JavaScript 文件 -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
  
- 
     <title>MenHomePage</title>
 </head>
 <body>
@@ -54,48 +53,43 @@
  
     <!-- 网页主体开始 -->
     <main>
-<!-- 根据menproduct数组长度，每三个产品为一组 -->
-<% for (let i = 0; i < menproduct.length; i += 3) { %>
-    <div class="product-container">
-        <!-- 第一列产品 -->
-        <% if (menproduct[i]) { %>
-            <a href="/product?productId=<%= menproduct[i].id %>" class="product-box">
-                <img class="product-img" src="<%= menproduct[i].image_path %>" alt="Product <%= i + 1 %>">
-                <div class="product-details">
-                    <div class="product-name"><%= menproduct[i].home_title %></div>
-                    <div class="product-price">￥<%= menproduct[i].price %></div>
-                </div>
-            </a>
+        <!-- 根据menproduct数组长度，每三个产品为一组 -->
+        <% for (let i = 0; i < menproduct.length; i += 3) { %>
+            <div class="product-container">
+                <!-- 第一列产品 -->
+                <% if (menproduct[i]) { %>
+                    <a href="/menproduct/<%= menproduct[i].id %>" class="product-box">
+                        <img class="product-img" src="<%= menproduct[i].image_path %>" alt="Product <%= i + 1 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= menproduct[i].home_title %></div>
+                            <div class="product-price">￥<%= menproduct[i].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+ 
+                <!-- 第二列产品 -->
+                <% if (menproduct[i + 1]) { %>
+                    <a href="/menproduct/<%= menproduct[i + 1].id %>" class="product-box">
+                        <img class="product-img" src="<%= menproduct[i + 1].image_path %>" alt="Product <%= i + 2 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= menproduct[i + 1].home_title %></div>
+                            <div class="product-price">￥<%= menproduct[i + 1].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+ 
+                <!-- 第三列产品 -->
+                <% if (menproduct[i + 2]) { %>
+                    <a href="/menproduct/<%= menproduct[i + 2].id %>" class="product-box">
+                        <img class="product-img" src="<%= menproduct[i + 2].image_path %>" alt="Product <%= i + 3 %>">
+                        <div class="product-details">
+                            <div class="product-name"><%= menproduct[i + 2].home_title %></div>
+                            <div class="product-price">￥<%= menproduct[i + 2].price %></div>
+                        </div>
+                    </a>
+                <% } %>
+            </div>
         <% } %>
- 
-        <!-- 第二列产品 -->
-        <% if (menproduct[i + 1]) { %>
-            <a href="/product?productId=<%= menproduct[i + 1].id %>" class="product-box">
-                <img class="product-img" src="<%= menproduct[i + 1].image_path %>" alt="Product <%= i + 2 %>">
-                <div class="product-details">
-                    <div class="product-name"><%= menproduct[i + 1].home_title %></div>
-                    <div class="product-price">￥<%= menproduct[i + 1].price %></div>
-                </div>
-            </a>
-        <% } %>
- 
-        <!-- 第三列产品 -->
-        <% if (menproduct[i + 2]) { %>
-            <a href="/product?productId=<%= menproduct[i + 2].id %>" class="product-box">
-                <img class="product-img" src="<%= menproduct[i + 2].image_path %>" alt="Product <%= i + 3 %>">
-                <div class="product-details">
-                    <div class="product-name"><%= menproduct[i + 2].home_title %></div>
-                    <div class="product-price">￥<%= menproduct[i + 2].price %></div>
-                </div>
-            </a>
-        <% } %>
-    </div>
-<% } %>
- 
- 
-       
-       
-        <!-- 其他产品行省略 -->
  
     </main>
     <!-- 网页主体结束 -->
@@ -123,7 +117,6 @@
         L.marker([18.80046,98.95095]).addTo(map)
               .bindPopup("<b>Chiang Mai University</b>").openPopup();
              
-        </script>
+    </script>
 </body>
 </html>
- 

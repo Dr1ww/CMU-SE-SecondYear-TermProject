@@ -137,6 +137,20 @@ app.post('/remove-from-cart', (req, res) => {
     });
 });
 
+app.get('/menproduct/:productId', (req, res) => {
+    const productId = req.params.productId;
+    const sql = 'SELECT * FROM menproduct WHERE id = ?';
+    db.query(sql, [productId], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('product', { productData: results[0] });
+    });
+});
+
+
 
 // 启动服务器
 const PORT = process.env.PORT || 3000;
