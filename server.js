@@ -155,6 +155,88 @@ app.get('/FAQ', (req, res) => {
     res.render('FAQ'); // 假设您的FAQ页面是使用ejs模板渲染的，这里假设模板文件名为FAQ.ejs
 });
 
+// 在您的 Express 应用中添加一个特定路由用于处理 特定 页面的请求
+app.get('/specialDiscount', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['SD'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/featuredClothing', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['FC'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/Sneakers', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['Sn'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/RunningShoes', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['RS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/BasketBallShoes', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['BS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/Fitness', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['FT'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+app.get('/Accessories', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['Ac'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+
+
+
 
 // 启动服务器
 const PORT = process.env.PORT || 3000;
