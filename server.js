@@ -184,6 +184,90 @@ app.get('/FAQ', (req, res) => {
 
 // 在您的 Express 应用中添加一个特定路由用于处理 特定 页面的请求
 app.get('/specialDiscount', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['SD'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/featuredClothing', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['FC'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/Sneakers', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['Sn'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/RunningShoes', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['RS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/BasketBallShoes', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['BS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/Fitness', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['FT'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+
+app.get('/Accessories', (req, res) => {
+    const sql = 'SELECT * FROM menproduct WHERE cate_id = ?'; 
+    db.query(sql, ['Ac'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPage', { menproduct: results });
+    });
+});
+//Women
+app.get('/specialDiscount_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['SD'], (err, results) => {
         if (err) {
@@ -195,7 +279,7 @@ app.get('/specialDiscount', (req, res) => {
     });
 });
 
-app.get('/featuredClothing', (req, res) => {
+app.get('/featuredClothing_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['FC'], (err, results) => {
         if (err) {
@@ -207,7 +291,7 @@ app.get('/featuredClothing', (req, res) => {
     });
 });
 
-app.get('/Sneakers', (req, res) => {
+app.get('/Sneakers_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['Sn'], (err, results) => {
         if (err) {
@@ -219,7 +303,7 @@ app.get('/Sneakers', (req, res) => {
     });
 });
 
-app.get('/RunningShoes', (req, res) => {
+app.get('/RunningShoes_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['RS'], (err, results) => {
         if (err) {
@@ -231,7 +315,7 @@ app.get('/RunningShoes', (req, res) => {
     });
 });
 
-app.get('/BasketBallShoes', (req, res) => {
+app.get('/BasketBallShoes_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['BS'], (err, results) => {
         if (err) {
@@ -243,7 +327,7 @@ app.get('/BasketBallShoes', (req, res) => {
     });
 });
 
-app.get('/Fitness', (req, res) => {
+app.get('/Fitness_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['FT'], (err, results) => {
         if (err) {
@@ -255,7 +339,7 @@ app.get('/Fitness', (req, res) => {
     });
 });
 
-app.get('/Accessories', (req, res) => {
+app.get('/Accessories_W', (req, res) => {
     const sql = 'SELECT * FROM womenproduct WHERE cate_id = ?'; 
     db.query(sql, ['Ac'], (err, results) => {
         if (err) {
@@ -266,8 +350,6 @@ app.get('/Accessories', (req, res) => {
         res.render('SubNavPageWomen', { womenproduct: results });
     });
 });
-//Women
-
 
 
 
