@@ -86,6 +86,20 @@ app.get('/WomenHomePage', (req, res) => {
         res.render('WomenHomePage', { womenproduct: results });
     });
 });
+//获取kids
+app.get('/KidsHomePage', (req, res) => {
+    // 从数据库中获取menproduct数据
+    db.query('SELECT * FROM kidsproduct', (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        // 将menproduct数据传递给MenHomePage.ejs模板
+        res.render('KidsHomePage', { kidsproduct: results });
+    });
+});
+
 
 
 
@@ -175,6 +189,19 @@ app.get('/womenproduct/:productId', (req, res) => {
         res.render('product', { productData: results[0] });
     });
 });
+app.get('/kidsproduct/:productId', (req, res) => {
+    const productId = req.params.productId;
+    const sql = 'SELECT * FROM kidsproduct WHERE id = ?';
+    db.query(sql, [productId], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('product', { productData: results[0] });
+    });
+});
+
 
 
 app.get('/FAQ', (req, res) => {
@@ -348,6 +375,78 @@ app.get('/Accessories_W', (req, res) => {
             return;
         }
         res.render('SubNavPageWomen', { womenproduct: results });
+    });
+});
+//Kids
+app.get('/specialDiscount_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['SD'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
+    });
+});
+
+app.get('/BoysClothing_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['BC'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
+    });
+});
+
+app.get('/GirlsClothing_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['GC'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
+    });
+});
+
+app.get('/GirlsShoes_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['GS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
+    });
+});
+
+app.get('/BoysShoes_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['BS'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
+    });
+});
+
+app.get('/Accessories_K', (req, res) => {
+    const sql = 'SELECT * FROM kidsproduct WHERE cate_id = ?'; 
+    db.query(sql, ['Ac'], (err, results) => {
+        if (err) {
+            console.error('Error querying database:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.render('SubNavPageKids', { kidsproduct: results });
     });
 });
 
