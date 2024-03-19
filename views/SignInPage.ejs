@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 添加 Bootstrap 样式链接 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/SignInPageFormat.css">
+
+    <title>Home Page</title>
+</head>
+<body>
+
+        <!-- Bootstrap 导航栏开始 -->
+        <%- include('partials/navbar') %>
+        <!-- Bootstrap 导航栏结束 -->
+
+<!-- 网页主体开始 -->
+<main>
+<!-- 左侧部分 -->
+<div class="left-section">
+    <h2>No Account?<br><span>Create account</span></h2>
+    <!--First Name 和 Last Name -->
+    <div class="form-row">
+        <div class="form-column">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-column">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+    </div>
+    <!-- Email 和 Date of Birth -->
+    <div class="form-row">
+        <div class="form-column">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-column">
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob">
+        </div>
+    </div>
+    <!-- Password 和 Confirm Password -->
+    <div class="form-row">
+        <div class="form-column">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-column">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+        </div>
+    </div>
+    <!-- Create Account 按钮 -->
+    <div class="form-row">
+        <div class="form-column">
+            <button id="createAccountButton">Create Account</button>
+        </div>
+    </div>
+</div>
+
+    <!-- 中间分隔线 -->
+    <div class="separator"><br></div>
+
+    <!-- 右侧部分 -->
+    <div class="right-section">
+        <h2>Have account?<br><span>Login account</span></h2>
+        <form>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="email">Email:</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="password">Password:</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <button id="createAccountButton">Sign In</button>
+                </div>
+            </div>
+        <div class="tips">
+            <p>Tips:</p>
+            <p>1. If you don't have an account yet, please register on the left first.</p>
+            <p>2. Please use the same email account and password as when you registered to log in.</p>
+            <p>3. We currently do not support password change services. 
+                If you forget your password, please register again.</p>
+            <p>4. The team reserves the right of final interpretation. 
+                If you have any questions, please contact the team.</p>
+        </div>
+                
+        </form>
+    </div>
+</main>
+<!-- 网页主体结束 -->
+
+        <!-- 底部开始 -->
+        <%- include('partials/footer') %>
+        <!-- 底部结束 -->
+
+
+    <!-- 添加 Bootstrap JavaScript 依赖 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--跳转相应网页-->
+
+   
+      <!------------------------------------------------------------>
+</body>
+</html>

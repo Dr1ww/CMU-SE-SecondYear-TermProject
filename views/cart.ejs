@@ -152,7 +152,7 @@
     });
     document.getElementById('payButton').addEventListener('click', function() {
     // 弹出确认支付的提示框
-    if (confirm("确认支付吗?")) {
+    if (confirm("Confirm payment?")) {
         // 用户确认支付，执行发送支付请求的操作
         pay();
     }
@@ -163,14 +163,14 @@ function pay() {
     axios.post('/pay')
         .then(response => {
             // 支付成功，处理响应
-            alert('支付成功！');
+            alert('Payment successful!');
             // 刷新页面或其他操作
             window.location.reload();
         })
         .catch(error => {
             // 处理支付失败的情况
             console.error('Error paying:', error);
-            alert('支付失败，请重试！');
+            alert('Payment failed, please try again!');
         });
 }
 

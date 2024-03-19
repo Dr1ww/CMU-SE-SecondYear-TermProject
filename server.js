@@ -208,6 +208,10 @@ app.get('/FAQ', (req, res) => {
     // 在这里发送您的FAQ页面
     res.render('FAQ'); // 假设您的FAQ页面是使用ejs模板渲染的，这里假设模板文件名为FAQ.ejs
 });
+app.get('/SignInPage', (req, res) => {
+    // 在这里发送您的FAQ页面
+    res.render('SignInPage'); // 假设您的FAQ页面是使用ejs模板渲染的，这里假设模板文件名为FAQ.ejs
+});
 
 // 在您的 Express 应用中添加一个特定路由用于处理 特定 页面的请求
 app.get('/specialDiscount', (req, res) => {
