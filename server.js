@@ -449,6 +449,56 @@ app.get('/Accessories_K', (req, res) => {
         res.render('SubNavPageKids', { kidsproduct: results });
     });
 });
+app.post('/pay', (req, res) => {
+    // 查询购物车数据
+    const sqlSelectCart = 'SELECT * FROM cart';
+    db.query(sqlSelectCart, (err, cartItems) => {
+        if (err) {
+            console.error('Error querying cart:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+
+        // 将购物车数据插入销售历史表
+        const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' '); // 获取当前时间
+        const sqlInsertSalesHistory = 'INSERT INTO SalesHistory (bill_date, product_id, number_of_items, bill_price) VALUES (?, ?, ?, ?)';
+        cartItems.forEach(cartItem => {
+            // 生成随机商品编号
+            const products = ['k001', 'k002', 'k003', 'k004', 'k005', 'k006', 'k007', 'k008', 'k009', 'k010', 'k011', 'k012', 'k013', 'k014', 'k015', 'k016', 'k017', 'k018',
+            'm001', 'm002', 'm003', 'm004', 'm005', 'm006', 'm007', 'm008', 'm009', 'm010', 'm011', 'm012', 'm013', 'm014', 'm015', 'm016', 'm017', 'm018', 'm019',
+            'w001', 'w002', 'w003', 'w004', 'w005', 'w006', 'w007', 'w008', 'w009', 'w010', 'w011', 'w012', 'w013', 'w014', 'w015', 'w016', 'w017', 'w018', 'w019',
+            'h000', 'h001', 'h002', 'h003', 'h004'];
+            const productId = products[Math.floor(Math.random() * products.length)];
+            
+            // 获取购物车中商品的价格
+            const price = cartItem.price;
+            
+            // 插入到销售历史表中
+            const values = [currentDate, productId, 1, price];
+            db.query(sqlInsertSalesHistory, values, (err, result) => {
+                if (err) {
+                    console.error('Error inserting into SalesHistory:', err);
+                    res.status(500).send('Internal Server Error');
+                    return;
+                }
+                console.log('Data saved to SalesHistory successfully!');
+            });
+        });
+
+        // 清空购物车数据
+        const sqlDeleteCart = 'DELETE FROM cart';
+        db.query(sqlDeleteCart, (err, result) => {
+            if (err) {
+                console.error('Error deleting from cart:', err);
+                res.status(500).send('Internal Server Error');
+                return;
+            }
+            console.log('Data deleted from cart successfully!');
+            // 发送成功响应
+            res.send('Payment success!');
+        });
+    });
+});
 
 
 

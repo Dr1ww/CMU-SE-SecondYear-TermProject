@@ -108,7 +108,7 @@
                 <!-- Total (Tax incl.) -->
                 <p>Total (Tax incl.10%): <span id="total">￥<%= (parseFloat(calculateSubtotal(cartItems)) * 1.1+30).toFixed(2) %></span></p>
                 <!-- Pay按钮 -->
-                <button type="button" class="btn btn-primary btn-block">Pay</button>
+                <button type="button" class="btn btn-primary btn-block" id="payButton">Pay</button>
             </div>
         </div>
     </div>
@@ -150,6 +150,29 @@
                 });
         }
     });
+    document.getElementById('payButton').addEventListener('click', function() {
+    // 弹出确认支付的提示框
+    if (confirm("确认支付吗?")) {
+        // 用户确认支付，执行发送支付请求的操作
+        pay();
+    }
+});
+
+// 支付函数
+function pay() {
+    axios.post('/pay')
+        .then(response => {
+            // 支付成功，处理响应
+            alert('支付成功！');
+            // 刷新页面或其他操作
+            window.location.reload();
+        })
+        .catch(error => {
+            // 处理支付失败的情况
+            console.error('Error paying:', error);
+            alert('支付失败，请重试！');
+        });
+}
 
 
 </script>
