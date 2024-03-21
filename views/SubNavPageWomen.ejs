@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="../CSS/MenFormat.css">
     <link rel="stylesheet" href="../CSS/SpecialDiscount.css">
+                <!-- Leaflet CSS 文件 -->
+                <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ 
+                <!-- Leaflet JavaScript 文件 -->
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            
+        
+    
+    
 
 </head>
 <body>
@@ -86,6 +95,22 @@
               .bindPopup("<b>Chiang Mai University</b>").openPopup();
              
     </script>
+    <script>
+        // 创建地图并设置中心点坐标和缩放级别
+        var map = L.map('map').setView([18.7953, 98.9529], 15);
+   
+        // 添加地图图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+   
+        // 添加标记并设置清迈大学的位置
+        // 在地图上添加标记（清迈大学的位置）
+        L.marker([18.80046,98.95095]).addTo(map)
+              .bindPopup("<b>Chiang Mai University</b>").openPopup();
+             
+        </script>
+  
 
 
       
